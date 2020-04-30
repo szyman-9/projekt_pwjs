@@ -14,7 +14,7 @@
     <script src="js/controllers.js"></script>
     <title>Samoloty</title>
   </head>
-  <body ng-controller="ListCtrl">
+  <body ng-controller="ContactCtrl">
 
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" id="navB">
         <a class="navbar-brand" href="#" id="logo1">SAMOLOTY</a>
@@ -23,15 +23,14 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Główna</a>
-            </li>
             <li class="nav-item">
-              <a class="nav-link" href="kontakt.html">Kontakt</a>
+              <a class="nav-link" href="index.html">Główna</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Kontakt</a>
             </li>
           </ul>
           <form class="form-inline mt-2 mt-md-0">
-            <text id="licznik" class="text-light">Aktualnie {{ galleries.length }} artykułów o samolotach</text>
             <input class="form-control mr-sm-2" ng-model="query" type="text" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
           </form>
@@ -39,21 +38,18 @@
       </nav>
       <br><br><br><br>
     <div class='container'>
-        <section class="jumbotron" ng-repeat='gallery in galleries | filter: query'>
-            <div class=”container”>
-                <center><img src="{{gallery.thumbnail}}" class="img-fluid"></center>
-                <h1>{{gallery.title}}</h1>
-                <p align="justify">
-                {{gallery.article}}
-                </p>
-            </div>
+        <section class="jumbotron">
+            <h1>Kontakt</h1>
+            <p>Autor strony: {{contact[0].autor}}</p>
+            <p>Indeks: {{contact[0].indeks}}</p>
+            <p>E-mail: {{contact[0].mail}}</p>
         </section>
     </div>
       
     <footer class="page-footer font-small bg-dark text-light">
 
         
-        <div class="footer-copyright text-center py-3">© 2020 Copyright:
+        <div class="footer-copyright text-center py-3">© {{contact[0].rok}} Copyright:
           Łukasz Szymański
         </div>
         
